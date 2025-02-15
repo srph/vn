@@ -61,8 +61,8 @@ export default function Timeline({
           key={date}
           className={`rounded p-2 transition-colors ${
             date === selectedItem?.date
-              ? "dark:bg-blue-950/50 bg-blue-50"
-              : "dark:bg-gray-800"
+              ? "bg-blue-50 dark:bg-gray-800/50"
+              : "dark:bg-transparent"
           }`}
         >
           <h2
@@ -72,7 +72,7 @@ export default function Timeline({
             {format(parseISO(date), "MMMM d, yyyy")}
           </h2>
 
-          <div className="relative ml-2">
+          <div className="relative mx-2">
             {itinerary.filter((item) => item.date === date).length > 0 && (
               <div
                 className="absolute left-[15px] top-[14px] w-[2px] bg-gray-200 dark:bg-gray-700"
@@ -87,10 +87,10 @@ export default function Timeline({
               .map((item, idx, arr) => (
                 <div
                   key={idx}
-                  className={`relative mb-2 cursor-pointer rounded p-1 pl-10 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 ${
+                  className={`scale-1 relative mb-2 scale-100 cursor-pointer rounded p-1 pr-2 pl-10 transition-all hover:scale-[1.05] active:scale-100 ${
                     selectedItem === item
-                      ? "bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800"
-                      : "dark:text-gray-100"
+                      ? "bg-blue-100 hover:bg-blue-200 dark:bg-orange-500 dark:hover:bg-orange-500"
+                      : "hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-700"
                   }`}
                   onClick={(event) => handleItemSelect(event, item)}
                 >
@@ -120,7 +120,13 @@ export default function Timeline({
 
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex min-w-0 flex-1 items-center gap-2">
-                      <span className="inline-block w-[72px] shrink-0 text-right text-gray-600 dark:text-gray-400">
+                      <span
+                        className={`inline-block w-[72px] shrink-0 text-right text-gray-600 ${
+                          selectedItem === item
+                            ? "dark:text-gray-600"
+                            : "dark:text-gray-400"
+                        }`}
+                      >
                         {format(
                           parse(item.time, "HH:mm", new Date()),
                           "h:mm a"
@@ -132,7 +138,13 @@ export default function Timeline({
                     </div>
 
                     {userLocation && (
-                      <span className="ml-2 shrink-0 text-sm text-gray-500 dark:text-gray-400">
+                      <span
+                        className={`ml-2 shrink-0 text-sm text-gray-500 dark:text-gray-400 ${
+                          selectedItem === item
+                            ? "dark:text-gray-600"
+                            : "dark:text-gray-400"
+                        }`}
+                      >
                         {Math.round(
                           getDistance(
                             userLocation.coords,
