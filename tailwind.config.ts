@@ -7,7 +7,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        questrial: ["var(--font-questrial)"],
+        dmSerifDisplay: ["var(--font-dm-serif-display)"],
+        funnelDisplay: ["var(--font-funnel-display)"],
+      },
+    },
   },
   plugins: [],
 };

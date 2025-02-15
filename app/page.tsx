@@ -34,6 +34,24 @@ export default function Home() {
     <>
       <main className="flex min-h-screen flex-col bg-white dark:bg-gray-900 lg:flex-row">
         <div className="h-[50vh] overflow-y-auto border-b border-gray-200 dark:border-gray-700 lg:h-screen lg:w-1/3 lg:border-b-0 lg:border-r">
+          <div className="py-10 px-4">
+            <div className="flex items-center gap-4">
+              <div className="text-[64px] font-bold leading-none">Our</div>
+              <div className="size-10 w-full rounded-lg bg-red-500 bg-[url('/heading-1.jpg')] bg-cover bg-center"></div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="font-dmSerifDisplay text-[64px] font-[800] italic leading-none">
+                Vietnam
+              </div>
+              <div className="size-10 w-full rounded-lg bg-red-500"></div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="size-10 w-full rounded-lg bg-red-500 bg-[url('/heading-2.jpg')] bg-cover bg-center"></div>
+              <div className="text-[64px] font-bold italic leading-none">
+                Trip
+              </div>
+            </div>
+          </div>
           <Timeline
             itinerary={itinerary}
             selectedDate={selectedDate}

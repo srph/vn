@@ -1,5 +1,5 @@
 import "./globals.css";
-import { GeistSans } from "geist/font/sans";
+import { Funnel_Display, DM_Serif_Display } from "next/font/google";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,13 +24,28 @@ export const metadata: Metadata = {
   },
 };
 
+const funnelDisplay = Funnel_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-funnel-display",
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-dm-serif-display",
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`dark ${GeistSans.className}`}>
+    <html
+      lang="en"
+      className={`dark ${funnelDisplay.className} ${dmSerifDisplay.variable}`}
+    >
       <head>
         <meta
           name="viewport"
@@ -38,7 +53,7 @@ export default function RootLayout({
         />
         <link
           rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇻🇳</text></svg>"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%23DA251D%22/><polygon points=%2216,4 20.5,17 8,11 24,11 11.5,17%22 fill=%22%23FFFF00%22/></svg>"
         />
       </head>
       <body className="dark:bg-gray-900 dark:text-gray-100">{children}</body>
