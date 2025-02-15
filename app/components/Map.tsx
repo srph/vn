@@ -32,8 +32,6 @@ export default function Map({
   const [watchId, setWatchId] = useState<number | null>(null);
   const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null);
 
-  // Comment out the location tracking effect
-  /*
   useEffect(() => {
     if ("geolocation" in navigator) {
       const id = navigator.geolocation.watchPosition(
@@ -64,7 +62,6 @@ export default function Map({
       }
     };
   }, [onLocationChange]);
-  */
 
   // Calculate distances
   const getDistance = useCallback(

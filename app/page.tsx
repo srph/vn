@@ -11,17 +11,7 @@ export default function Home() {
   const [selectedItem, setSelectedItem] = useState<ItineraryItem | null>(
     itinerary.find((item) => item.date === "2025-02-17") || null
   );
-  const [userLocation, setUserLocation] = useState<Location | null>({
-    coords: {
-      lat: 10.779127013937405,
-      lng: 106.70398208285836,
-    },
-    // coords: {
-    //   lat: 10.8184, // Tan Son Nhat coordinates
-    //   lng: 106.6588,
-    // },
-    accuracy: 20,
-  });
+  const [userLocation, setUserLocation] = useState<Location | null>(null);
 
   const handleItemSelect = (item: ItineraryItem | null) => {
     setSelectedItem(item);
