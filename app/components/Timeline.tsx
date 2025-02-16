@@ -55,14 +55,14 @@ export default function Timeline({
   };
 
   return (
-    <div className="space-y-6 p-4">
+    <div className="space-y-2 p-4">
       {dates.map((date) => (
         <div
           key={date}
-          className={`rounded p-2 transition-colors ${
+          className={`rounded border p-2 transition-colors ${
             date === selectedItem?.date
-              ? "bg-blue-50 dark:bg-gray-800/50"
-              : "dark:bg-transparent"
+              ? "border-dashed border-orange-500"
+              : "border-transparent dark:bg-transparent"
           }`}
         >
           <h2
@@ -75,7 +75,7 @@ export default function Timeline({
           <div className="relative mx-2">
             {itinerary.filter((item) => item.date === date).length > 0 && (
               <div
-                className="absolute left-[15px] top-[14px] w-[2px] bg-gray-200 dark:bg-gray-700"
+                className="absolute left-[15px] top-[14px] w-[2px] bg-neutral-200 dark:bg-neutral-700"
                 style={{
                   height: "calc(100% - 28px)",
                 }}
@@ -87,10 +87,10 @@ export default function Timeline({
               .map((item, idx, arr) => (
                 <div
                   key={idx}
-                  className={`scale-1 relative mb-2 scale-100 cursor-pointer rounded p-1 pr-2 pl-10 transition-all hover:scale-[1.05] active:scale-100 ${
+                  className={`scale-1 relative mb-2 scale-100 cursor-pointer rounded p-1 pl-10 pr-2 transition-all hover:scale-[1.05] active:scale-100 ${
                     selectedItem === item
                       ? "bg-blue-100 hover:bg-blue-200 dark:bg-orange-500 dark:hover:bg-orange-500"
-                      : "hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-700"
+                      : "hover:bg-neutral-100 dark:text-neutral-100 dark:hover:bg-neutral-700"
                   }`}
                   onClick={(event) => handleItemSelect(event, item)}
                 >
@@ -99,7 +99,7 @@ export default function Timeline({
                       className={`flex h-4 w-4 items-center justify-center rounded-full border-2 ${
                         isItemDone(item)
                           ? "border-transparent bg-green-500 dark:bg-green-600"
-                          : "border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-800"
+                          : "border-neutral-300 bg-white dark:border-neutral-600 dark:bg-neutral-800"
                       }`}
                     >
                       {isItemDone(item) && (
@@ -121,10 +121,10 @@ export default function Timeline({
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex min-w-0 flex-1 items-center gap-2">
                       <span
-                        className={`inline-block w-[72px] shrink-0 text-right text-gray-600 ${
+                        className={`inline-block w-[72px] shrink-0 text-right text-neutral-600 ${
                           selectedItem === item
-                            ? "dark:text-gray-600"
-                            : "dark:text-gray-400"
+                            ? "dark:text-neutral-600"
+                            : "dark:text-neutral-400"
                         }`}
                       >
                         {format(
@@ -132,17 +132,17 @@ export default function Timeline({
                           "h:mm a"
                         )}
                       </span>
-                      <span className="truncate dark:text-gray-100">
+                      <span className="truncate dark:text-neutral-100">
                         {item.activity}
                       </span>
                     </div>
 
                     {userLocation && (
                       <span
-                        className={`ml-2 shrink-0 text-sm text-gray-500 dark:text-gray-400 ${
+                        className={`ml-2 shrink-0 text-sm text-neutral-500 dark:text-neutral-400 ${
                           selectedItem === item
-                            ? "dark:text-gray-600"
-                            : "dark:text-gray-400"
+                            ? "dark:text-neutral-600"
+                            : "dark:text-neutral-400"
                         }`}
                       >
                         {Math.round(

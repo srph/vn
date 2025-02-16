@@ -56,7 +56,9 @@ export default function RootLayout({
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%23DA251D%22/><polygon points=%2216,4 20.5,17 8,11 24,11 11.5,17%22 fill=%22%23FFFF00%22/></svg>"
         />
       </head>
-      <body className="dark:bg-gray-900 dark:text-gray-100">{children}</body>
+      <body className="dark:bg-neutral-900 dark:text-neutral-100">
+        {children}
+      </body>
     </html>
   );
 }

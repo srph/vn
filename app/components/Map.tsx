@@ -217,7 +217,7 @@ export default function Map({
 
   if (!isLoaded)
     return (
-      <div className="flex h-full w-full items-center justify-center bg-gray-100 dark:bg-gray-800">
+      <div className="flex h-full w-full items-center justify-center bg-neutral-100 dark:bg-neutral-800">
         Loading map...
       </div>
     );
@@ -303,12 +303,12 @@ export default function Map({
       {userLocation && (
         <button
           onClick={handleCenterOnUser}
-          className="absolute bottom-4 right-4 rounded-full bg-white p-3 shadow-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
+          className="absolute bottom-4 right-4 rounded-full bg-white p-3 shadow-lg hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700"
           title="Center on my location"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-gray-700"
+            className="h-6 w-6 text-neutral-700"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -333,7 +333,7 @@ export default function Map({
           href={selectedItem.location.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-4 left-4 rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
+          className="absolute bottom-4 left-4 rounded-md bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-lg hover:bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700"
         >
           Open in Google Maps
         </a>
