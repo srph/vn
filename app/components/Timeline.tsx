@@ -55,7 +55,7 @@ export default function Timeline({
   };
 
   return (
-    <div className="space-y-2 p-4">
+    <div className="space-y-2 px-4 pb-4">
       {dates.map((date) => (
         <div
           key={date}

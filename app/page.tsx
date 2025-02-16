@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <main className="flex min-h-screen flex-col bg-white lg:flex-row dark:bg-neutral-900">
         <div className="h-[50vh] overflow-y-auto border-b border-neutral-200 lg:h-screen lg:w-1/3 lg:border-b-0 lg:border-r dark:border-neutral-700">
-          <div className="px-4 py-10">
+          <div className="px-4 py-4">
             <div className="flex items-center gap-4">
               <div className="text-[64px] font-bold leading-none">Our</div>
               <div className="size-10 w-full rounded-lg bg-red-500 bg-[url('/heading-1.jpg')] bg-cover bg-center"></div>
