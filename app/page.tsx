@@ -44,6 +44,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           <Timeline
             itinerary={itinerary}
             selectedDate={selectedDate}
@@ -53,7 +54,7 @@ export default function Home() {
             userLocation={userLocation}
           />
 
-          <section className="p-4">
+          <section className="p-4 pt-0">
             <h2 className="mb-4 text-3xl font-bold">
               <span className="font-dmSerifDisplay italic">Common</span> Phrases
             </h2>
